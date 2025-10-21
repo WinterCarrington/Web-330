@@ -19,7 +19,7 @@ function timer(min, sec) {
              }
 // Add the runPause method to the timer prototype //
              timer.prototype.runPause = function(timer, minBox, secBox) {
-                // Step 5: If timer.timeID is null, start the timer
+// Step 5: If timer.timeID is null, start the timer//
                    if (timer.timeID === null) {
                          timer.minutes = parseInt(minBox.value);
                                timer.seconds = parseInt(secBox.value);
