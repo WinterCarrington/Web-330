@@ -12,4 +12,9 @@
 
                                     /*--------------- Object Code --------------------*/
                     
+function timer(min, sec) {
+       this.minutes = min;
+          this.seconds = sec;
+             this.timeID = null;
+             }
 
