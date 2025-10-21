@@ -44,5 +44,4 @@ function timer(min, sec) {
                                                                                                                                                                                   timer.timeID = null;
                                                                                                                                                                                      }
                                                                                                                                                                                      };
-                                                                                                                                                                                     `7
-
+                                                                                                                                                                                     
