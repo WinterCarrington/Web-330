@@ -46,3 +46,21 @@ timer.prototype.runPause = function(timer, minBox, secBox) {
       timer.timeID = null;
    }
 };
+function countdown(timer, minBox, secBox) {
+   if (timer.seconds > 0) {
+      // a. Decrease seconds by 1
+      timer.seconds--;
+   } else if (timer.minutes > 0) {
+      // b. Decrease minutes by 1 and reset seconds to 59
+      timer.minutes--;
+      timer.seconds = 59;
+   } else {
+      // c. Timer has reached 0:0 — stop the timer
+      clearInterval(timer.timeID);
+      timer.timeID = null;
+   }
+
+   // d. Update the input boxes with the current time
+   minBox.value = timer.minutes;
+   secBox.value = timer.seconds;
+}
