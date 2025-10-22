@@ -74,5 +74,5 @@ window.addEventListener("load", function() {
    secBox.onchange = function() {
       myTimer.seconds = parseInt(secBox.value);
    };
-   }
+   
 });
