@@ -65,12 +65,12 @@ window.addEventListener("load", function() {
       myTimer.runPause(myTimer, minBox, secBox);
    });
 
-   // ✅ onchange event for minutes input
+   // onchange event for minutes input
    minBox.onchange = function() {
       myTimer.minutes = parseInt(minBox.value);
    };
 
-   // ✅ onchange event for seconds input
+   //  onchange event for seconds input
    secBox.onchange = function() {
       myTimer.seconds = parseInt(secBox.value);
    };
