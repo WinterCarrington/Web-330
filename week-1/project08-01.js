@@ -64,3 +64,8 @@ function countdown(timer, minBox, secBox) {
    minBox.value = timer.minutes;
    secBox.value = timer.seconds;
 }
+// Declare an instance of the timer object
+const minBox = document.getElementById("minutesBox");
+const secBox = document.getElementById("secondsBox");
+
+const myTimer = new timer(parseInt(minBox.value), parseInt(secBox.value));
