@@ -21,51 +21,57 @@ function timer(min, sec) {
 
 // Add the runPause method to the timer prototype
 timer.prototype.runPause = function(timer, minBox, secBox) {
-   // Step 5: If timer.timeID is null, start the timer
    if (timer.timeID === null) {
       timer.minutes = parseInt(minBox.value);
       timer.seconds = parseInt(secBox.value);
 
       timer.timeID = setInterval(function() {
-         if (timer.seconds > 0) {
-            timer.seconds--;
-         } else if (timer.minutes > 0) {
-            timer.minutes--;
-            timer.seconds = 59;
-         } else {
-            clearInterval(timer.timeID);
-            timer.timeID = null;
-         }
-
-         minBox.value = timer.minutes;
-         secBox.value = timer.seconds;
+         countdown(timer, minBox, secBox);
       }, 1000);
    } else {
-      // Step 6: If timer is running, pause it//
       clearInterval(timer.timeID);
       timer.timeID = null;
    }
 };
+
+// Countdown function
 function countdown(timer, minBox, secBox) {
    if (timer.seconds > 0) {
-      // a. Decrease seconds by 1
       timer.seconds--;
    } else if (timer.minutes > 0) {
-      // b. Decrease minutes by 1 and reset seconds to 59
       timer.minutes--;
       timer.seconds = 59;
    } else {
-      // c. Timer has reached 0:0 — stop the timer
       clearInterval(timer.timeID);
       timer.timeID = null;
    }
 
-   // d. Update the input boxes with the current time
    minBox.value = timer.minutes;
    secBox.value = timer.seconds;
 }
-// Declare an instance of the timer object//
-const minBox = document.getElementById("minutesBox");
-const secBox = document.getElementById("secondsBox");
 
-const myTimer = new timer(parseInt(minBox.value), parseInt(secBox.value));
+/*--------------- DOM Setup and Event Handlers --------------------*/
+
+window.addEventListener("load", function() {
+   const minBox = document.getElementById("minutesBox");
+   const secBox = document.getElementById("secondsBox");
+   const runPauseButton = document.getElementById("runPauseButton");
+
+   // Declare an instance of the timer object
+   const myTimer = new timer(parseInt(minBox.value), parseInt(secBox.value));
+
+   // RUN/PAUSE button click event
+   runPauseButton.addEventListener("click", function() {
+      myTimer.runPause(myTimer, minBox, secBox);
+   });
+
+   // ✅ onchange event for minutes input
+   minBox.onchange = function() {
+      myTimer.minutes = parseInt(minBox.value);
+   };
+
+   // ✅ onchange event for seconds input
+   secBox.onchange = function() {
+      myTimer.seconds = parseInt(secBox.value);
+   };
+});
