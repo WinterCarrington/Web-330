@@ -41,7 +41,7 @@ timer.prototype.runPause = function(timer, minBox, secBox) {
          secBox.value = timer.seconds;
       }, 1000);
    } else {
-      // Step 6: If timer is running, pause it
+      // Step 6: If timer is running, pause it//
       clearInterval(timer.timeID);
       timer.timeID = null;
    }
