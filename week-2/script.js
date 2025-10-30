@@ -11,15 +11,42 @@
 "use strict";
 
 function createCharacter(name, gender, characterClass) {
-  // TODO: Implement this function
+  // Character factory using closures
+  return {
+    getName: function() {
+      return name;
+    },
+    getGender: function() {
+      return gender;
+    },
+    getClass: function() {
+      return characterClass;
+    }
+  };
 }
 
 document.getElementById("generateHero").addEventListener("click", function (e) {
   e.preventDefault();
 
-  // TODO: Get form values
+  // Get form values
+  const name = document.getElementById("name").value.trim();
+  const gender = document.getElementById("gender").value;
+  const characterClass = document.getElementById("class").value;
 
-  // TODO: Create character
+  if (!name || !gender || !characterClass) {
+    alert("Please fill out all fields!");
+    return;
+  }
 
-  // TODO: Display character information
+  // Create character using the closure-based factory
+  const hero = createCharacter(name, gender, characterClass);
+
+  // Display character information
+  const displayDiv = document.getElementById("characterDisplay");
+  displayDiv.style.display = "block";
+  displayDiv.innerHTML = `
+    <h2>${hero.getName()}</h2>
+    <p><strong>Gender:</strong> ${hero.getGender()}</p>
+    <p><strong>Class:</strong> ${hero.getClass()}</p>
+  `;
 });
