@@ -11,7 +11,6 @@
 */
 
 /* Page Objects */
-
 let riderName = document.getElementById("riderName");
 let ageGroup = document.getElementById("ageGroup");
 let bikeOption = document.getElementById("bikeOption");
@@ -20,6 +19,22 @@ let accOption = document.getElementById("accOption");
 let region = document.getElementById("region");
 let miles = document.getElementById("miles");
 let comments = document.getElementById("comments");
+
+/* Function to store data and redirect */
+function showData() {
+  // Store each field value in session storage
+  sessionStorage.setItem("riderName", riderName.value);
+  sessionStorage.setItem("ageGroup", ageGroup.value);
+  sessionStorage.setItem("bikeOption", bikeOption.value);
+  sessionStorage.setItem("routeOption", routeOption.value);
+  sessionStorage.setItem("accOption", accOption.value);
+  sessionStorage.setItem("region", region.value);
+  sessionStorage.setItem("miles", miles.value);
+  sessionStorage.setItem("comments", comments.value);
+
+  // Redirect to the next page
+  location.href = "project09-02b.html";
+}
 
 /* Add event handler for Submit button */
 document.getElementById("submitButton").onclick = showData;
