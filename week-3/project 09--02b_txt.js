@@ -20,5 +20,12 @@ let region = document.getElementById("region");
 let miles = document.getElementById("miles");
 let comments = document.getElementById("comments");
 
-/* Retrieve data from session storage */
+/* Retrieve data from session storage and display on page */
 riderName.textContent = sessionStorage.getItem("riderName");
+ageGroup.textContent = sessionStorage.getItem("ageGroup");
+bikeOption.textContent = sessionStorage.getItem("bikeOption");
+routeOption.textContent = sessionStorage.getItem("routeOption");
+accOption.textContent = sessionStorage.getItem("accOption");
+region.textContent = sessionStorage.getItem("region");
+miles.textContent = sessionStorage.getItem("miles");
+comments.textContent = sessionStorage.getItem("comments");
