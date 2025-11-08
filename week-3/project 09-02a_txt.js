@@ -20,3 +20,6 @@ let accOption = document.getElementById("accOption");
 let region = document.getElementById("region");
 let miles = document.getElementById("miles");
 let comments = document.getElementById("comments");
+
+/* Add event handler for Submit button */
+document.getElementById("submitButton").onclick = showData;
