@@ -1,21 +1,22 @@
+<!--
+  Pragmatic JavaScript
+  Chapter 2
+  Programming Assignment
+
+  Author: Lantha Wade
+  Date: 11/24/25
+  Filename: index.html
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
-    <!--
-      Pragmatic JavaScript
-      Chapter 2
-      Programming Assignment
-
-      Author:
-      Date:
-      Filename:
-    -->
     <title>Table Reservation</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
 
   <body>
-    <div class="form-container">
+    <div class="form-container rainbow-border">
       <form id="reservationForm">
         <label for="name">Name:</label><br />
         <input type="text" id="name" name="name" required /><br />
@@ -30,7 +31,7 @@
           required
         /><br />
 
-        <input type="submit" value="Reserve" />
+        <input type="submit" value="Reserve" class="glow-btn" />
       </form>
 
       <p id="message"></p>
