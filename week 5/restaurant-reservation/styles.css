@@ -51,12 +51,12 @@ body {
         #ff4d6d
     );
     -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; /* for Safari */
+    mask-composite: exclude;     /* for Firefox/standard */
     filter: blur(6px);
-    opacity: .9;
+    opacity: 0.9;
     animation: spin 6s linear infinite;
     z-index: 0;
 }
