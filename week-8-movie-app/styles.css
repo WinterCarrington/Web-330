@@ -8,23 +8,35 @@
   Filename: styles.css
 */
 
-/* Add your styles here */
+/* Fancy but simple design */
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 40px;
   display: flex;
   justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+              url("https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=1350&q=80");
+  /* Movie theater background */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 }
 
 .form-container {
-  background: white;
-  padding: 20px 25px;
-  border-radius: 10px;
-  width: 350px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 15px;
+  width: 380px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: transform 0.2s ease;
+}
+
+.form-container:hover {
+  transform: scale(1.015);
 }
 
 form {
@@ -34,25 +46,56 @@ form {
 
 input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
 }
 
 button {
-  padding: 10px 16px;
+  padding: 12px 16px;
   cursor: pointer;
   border: none;
-  background: #007bff;
+  background: #ff4757;
   color: white;
-  border-radius: 6px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background: #ff6b81;
+  transform: translateY(-2px);
 }
 
 #movie-info {
   margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#movie-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#movie-director,
+#movie-year,
+#movie-synopsis {
+  margin: 6px 0;
 }
 
 #error-message {
-  color: red;
-  margin-top: 10px;
+  color: #ff6b6b;
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  margin-top: 12px;
+  text-align: center;
 }

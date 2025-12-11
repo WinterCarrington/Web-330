@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
+
     <!--
       Pragmatic JavaScript
       Chapter 4
@@ -10,22 +8,27 @@
       Date: 12/15/25
       Filename: index.html
     -->
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <body>
-    <div class="form-container">
-      <form id="movie-form">
-        <input type="text" id="title-input" placeholder="Enter movie title" />
-        <button type="submit">Search</button>
-      </form>
-      <div id="movie-info">
-        <h2 id="movie-title"></h2>
-        <p id="movie-director"></p>
-        <p id="movie-year"></p>
-        <p id="movie-synopsis"></p>
-      </div>
-      <p id="error-message"></p>
+      <!DOCTYPE html>
+      <html>
+        <head></head>
+    <body>
+  <div class="form-container">
+    <h1 style="text-align:center; margin-bottom: 15px;">🎬 Movie Finder</h1>
+
+    <form id="movie-form">
+      <input type="text" id="title-input" placeholder="Enter movie title" />
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="movie-info">
+      <h2 id="movie-title"></h2>
+      <p id="movie-director"></p>
+      <p id="movie-year"></p>
+      <p id="movie-synopsis"></p>
     </div>
-    <script src="script.js"></script>
-  </body>
-</html>
+
+    <p id="error-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
