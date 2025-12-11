@@ -16,22 +16,36 @@ const movies = [
     director: "Christopher Nolan",
     year: 2010,
     synopsis:
-      "A thief enters dreams to steal secrets from deep subconscious levels.",
+      "A thief who steals corporate secrets through dream-sharing technology is given a chance at redemption."
   },
   {
     title: "The Matrix",
     director: "Lana & Lilly Wachowski",
     year: 1999,
     synopsis:
-      "A hacker discovers his world is a simulation controlled by machines.",
+      "A hacker discovers the world around him is a simulated reality controlled by machines."
   },
   {
     title: "Interstellar",
     director: "Christopher Nolan",
     year: 2014,
     synopsis:
-      "A team travels through a wormhole to find a new home for humanity.",
+      "A group of explorers travel through a wormhole to find a new home for humanity."
   },
+  {
+    title: "Avatar",
+    director: "James Cameron",
+    year: 2009,
+    synopsis:
+      "A marine on an alien world becomes torn between following orders and protecting the world he grows to love."
+  },
+  {
+    title: "Titanic",
+    director: "James Cameron",
+    year: 1997,
+    synopsis:
+      "A wealthy woman falls in love with a poor artist aboard the doomed RMS Titanic."
+  }
 ];
 
 function fetchMovie(title) {
@@ -44,9 +58,9 @@ function fetchMovie(title) {
       if (movie) {
         resolve(movie);
       } else {
-        reject("Movie not found. Try another title.");
+        reject("❌ Movie not found. Try another title.");
       }
-    }, 1000); // simulate 1-second delay
+    }, 1000); // Simulated 1-second delay
   });
 }
 
@@ -61,7 +75,7 @@ document
 
     // Clear previous messages
     errorMessage.textContent = "";
-    movieInfo.style.display = "none";
+    movieInfo.style.opacity = "0";
 
     try {
       const movie = await fetchMovie(titleInput);
@@ -71,10 +85,10 @@ document
       document.getElementById("movie-director").textContent =
         "Director: " + movie.director;
       document.getElementById("movie-year").textContent =
-        "Released: " + movie.year;
+        "Release Year: " + movie.year;
       document.getElementById("movie-synopsis").textContent = movie.synopsis;
 
-      movieInfo.style.display = "block";
+      movieInfo.style.opacity = "1"; // fade-in effect works now
     } catch (error) {
       errorMessage.textContent = error;
     }
