@@ -9,26 +9,33 @@
       Filename: index.html
     -->
       <!DOCTYPE html>
-      <html>
-        <head></head>
-    <body>
-  <div class="form-container">
-    <h1 style="text-align:center; margin-bottom: 15px;">🎬 Movie Finder</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Movie Finder</title>
+  </head>
 
-    <form id="movie-form">
-      <input type="text" id="title-input" placeholder="Enter movie title" />
-      <button type="submit">Search</button>
-    </form>
+  <body>
+    <div class="form-container">
+      <h1 style="text-align:center; margin-bottom: 15px;">🎬 Movie Finder</h1>
 
-    <div id="movie-info">
-      <h2 id="movie-title"></h2>
-      <p id="movie-director"></p>
-      <p id="movie-year"></p>
-      <p id="movie-synopsis"></p>
+      <form id="movie-form">
+        <input type="text" id="title-input" placeholder="Enter movie title" />
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="movie-info">
+        <h2 id="movie-title"></h2>
+        <p id="movie-director"></p>
+        <p id="movie-year"></p>
+        <p id="movie-synopsis"></p>
+      </div>
+
+      <p id="error-message"></p>
     </div>
 
-    <p id="error-message"></p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
+</html>

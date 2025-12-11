@@ -8,7 +8,6 @@
   Filename: styles.css
 */
 
-/* Fancy but simple design */
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -16,13 +15,16 @@ body {
   padding: 40px;
   display: flex;
   justify-content: center;
+
+  /* Cinematic background */
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
               url("https://images.unsplash.com/photo-1517602302552-471fe67acf66?auto=format&fit=crop&w=1350&q=80");
-  /* Movie theater background */
   background-size: cover;
   background-position: center;
   color: #fff;
 }
+
+/* ———————————— FORM CONTAINER ———————————— */
 
 .form-container {
   background: rgba(255, 255, 255, 0.15);
@@ -38,6 +40,8 @@ body {
 .form-container:hover {
   transform: scale(1.015);
 }
+
+/* ———————————— FORM FIELDS ———————————— */
 
 form {
   display: flex;
@@ -69,6 +73,8 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* ———————————— MOVIE RESULTS ———————————— */
+
 #movie-info {
   margin-top: 20px;
   opacity: 0;
@@ -76,9 +82,7 @@ button:hover {
 }
 
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 #movie-title {
@@ -91,6 +95,8 @@ button:hover {
 #movie-synopsis {
   margin: 6px 0;
 }
+
+/* ———————————— ERROR MESSAGE ———————————— */
 
 #error-message {
   color: #ff6b6b;
