@@ -1,4 +1,3 @@
-
 /*    JavaScript 7th Edition
       Chapter 12
       Project 12-03
@@ -12,25 +11,22 @@
 "use strict";
 
 $("article > h2").click(function () {
+  // a. Reference the clicked heading
+  let heading = $(this);
 
-   // a. Reference the clicked heading
-   let heading = $(this);
+  // b. Reference the next sibling list
+  let list = heading.next();
 
-   // b. Reference the next sibling list
-   let list = heading.next();
+  // c. Reference the image inside the heading
+  let headingImage = heading.children("img");
 
-   // c. Reference the image inside the heading
-   let headingImage = heading.children("img");
+  // Toggle list visibility
+  list.slideToggle(500);
 
-   // Toggle list visibility
-   list.slideToggle(500);
-
-   // Switch plus/minus image
-   if (headingImage.attr("src") === "plus.png") {
-      headingImage.attr("src", "minus.png");
-   } else {
-      headingImage.attr("src", "plus.png");
-   }
+  // Switch plus/minus image
+  if (headingImage.attr("src") === "plus.png") {
+    headingImage.attr("src", "minus.png");
+  } else {
+    headingImage.attr("src", "plus.png");
+  }
 });
-
-
