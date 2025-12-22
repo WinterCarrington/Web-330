@@ -3,8 +3,8 @@
       Project 12-03
 
       Project to show a recipe with expanding/contracting content
-      Author: 
-      Date:   
+      Author: Lantha Wade
+      Date:   12/23/25
 
       Filename: project12-03.js
 */
